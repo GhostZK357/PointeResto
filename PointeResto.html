@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PointeResto</title>
+  <link rel="stylesheet" href="PointeResto.css" />
+</head>
+<body>
+
+  <nav>
+    <div class="nav-logo">Pointe<span>Resto</span></div>
+    <div class="nav-actions">
+      <button class="btn-nav" onclick="openModal(null, true)">+ Avis</button>
+      <button class="btn-nav filled">Connexion</button>
+    </div>
+  </nav>
+
+ 
+  <section class="hero">
+    <p class="hero-eyebrow">Pointe-Noire · Congo</p>
+    <h1>Votre guide<br>gastronomique <em>local</em></h1>
+    <p>Restaurants, maquis et fast-foods — trouvez où manger maintenant.</p>
+    <div class="search-bar">
+      <input
+        class="search-input"
+        type="text"
+        placeholder="Hamburger, poisson braisé…"
+        id="searchInput"
+        oninput="filterRestaurants()"
+      />
+      <button class="btn-search" onclick="filterRestaurants()"> Chercher</button>
+    </div>
+  </section>
+
+  <div class="quartiers-scroll" id="quartierChips">
+    <div class="chip active" onclick="selectQuartier(this, '')">Tous</div>
+    <div class="chip" onclick="selectQuartier(this, 'Centre-Ville')"> Centre-Ville</div>
+    <div class="chip" onclick="selectQuartier(this, 'Lumumba')"> Lumumba</div>
+    <div class="chip" onclick="selectQuartier(this, 'Tié-Tié')"> Tié-Tié</div>
+    <div class="chip" onclick="selectQuartier(this, 'Mpaka')"> Mpaka</div>
+    <div class="chip" onclick="selectQuartier(this, 'Côte Sauvage')"> Côte Sauvage</div>
+    <div class="chip" onclick="selectQuartier(this, 'Fond Tié-Tié')"> Fond Tié-Tié</div>
+  </div>
+
+  <div class="filters" id="typeFilters">
+    <button class="filter-btn active" onclick="selectType(this, '')"><span class="filter-icon"></span> Tous</button>
+    <button class="filter-btn" onclick="selectType(this, 'fast-food')"><span class="filter-icon"></span> Fast-Food</button>
+    <button class="filter-btn" onclick="selectType(this, 'maquis')"><span class="filter-icon"></span> Maquis</button>
+    <button class="filter-btn" onclick="selectType(this, 'restaurant')"><span class="filter-icon"></span> Restaurant</button>
+    <button class="filter-btn" onclick="selectType(this, 'gastronomie')"><span class="filter-icon"></span> Gastronomie</button>
+    <button class="filter-btn" onclick="selectType(this, 'fruits de mer')"><span class="filter-icon"></span> Fruits de mer</button>
+  </div>
+
+  <div class="favs-banner" id="favsBanner">
+    <h3> Mes favoris du week-end</h3>
+    <div class="favs-list" id="favsList"></div>
+  </div>
+
+  <div class="section-header">
+    <h2 class="section-title">Établissements</h2>
+    <a class="section-link" id="resultCount">20 résultats</a>
+  </div>
+
+  <div class="cards-grid" id="cardsGrid"></div>
+
+  <div class="no-results" id="noResults">
+    <div style="font-size:2.5rem"></div>
+    <p>Aucun résultat trouvé.<br>Essayez un autre quartier ou mot-clé.</p>
+  </div>
+
+  <div class="bottom-spacer"></div>
+
+  <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+    <div class="modal" id="modalContent">
+      <div class="modal-handle"></div>
+      <div class="modal-header">
+        <div class="modal-title" id="modalTitle">—</div>
+        <button class="modal-close" onclick="closeModalDirect()"></button>
+      </div>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <nav class="bottom-nav">
+    <button class="bnav-item active" onclick="setTab(this)"><span class="icon"></span>Accueil</button>
+    <button class="bnav-item" onclick="setTab(this)"><span class="icon"></span>Recherche</button>
+    <button class="bnav-item" onclick="setTab(this); toggleFavs()"><span class="icon"></span>Favoris</button>
+    <button class="bnav-item" onclick="setTab(this)"><span class="icon"></span>Compte</button>
+  </nav>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="PointeResto.js"></script>
+</body>
+</html>
