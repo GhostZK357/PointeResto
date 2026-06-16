@@ -11,7 +11,6 @@ PointeResto est une application web permettant aux habitants et visiteurs de Poi
 - **Base de données** : PostgreSQL 17
 
 ## Structure du projet
-## Structure du projet
 
 - 📁 Database/
   - database.sql
