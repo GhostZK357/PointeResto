@@ -11,19 +11,20 @@ PointeResto est une application web permettant aux habitants et visiteurs de Poi
 - **Base de données** : PostgreSQL 17
 
 ## Structure du projet
-PointeResto/
-├── Database/
-│   ├── database.sql
-│   ├── PointeResto_MCD.mdj
-│   └── PointeResto_MCD.png
-├── IMAGE/
-│   └── (toutes les images des restaurants)
-├── connexion.css
-├── Connexion.html
-├── PointeResto.css
-├── PointeResto.html
-├── PointeResto.js
-└── README.md
+## Structure du projet
+
+- 📁 Database/
+  - database.sql
+  - PointeResto_MCD.mdj
+  - PointeResto_MCD.png
+- 📁 IMAGE/
+  - (toutes les images des restaurants)
+- connexion.css
+- Connexion.html
+- PointeResto.css
+- PointeResto.html
+- PointeResto.js
+- README.md
 ## Base de données PostgreSQL
 Les tables principales sont :
 - **quartiers** : Les zones géographiques de Pointe-Noire
